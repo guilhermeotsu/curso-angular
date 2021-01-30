@@ -1,0 +1,55 @@
+<div class="container main-container">
+    <h4>Demo Cadastro</h4>
+    <hr />
+    
+     <!-- novalidate é um bool que representa que os dados nao serao validados antes de serem enviados -->
+     <!-- Para submeter um formulário pelo Angular é necessario do evento ngSubmit, passando um métodoß-->
+    <form novalidate (ngSubmit)="addUser()" [formGroup]="cadastroForm">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-2 control-label"for="nome" >Nome Completo</label>
+                <div class="col-md-10">
+                    <input class="form-control"id="nome" type="text" placeholder="Nome (Obrigatório)" formControlName="nome"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="cpf" >CPF</label>
+                <div class="col-md-10">
+                    <input class="form-control" id="cpf" type="text" placeholder="CPF (Obrigatório)" formControlName="cpf" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="email" >E-mail</label>
+                <div class="col-md-10">
+                    <input class="form-control" id="email" type="email" placeholder="Email (Obrigatório)" formControlName="email"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="senha" >Senha</label>
+                <div class="col-md-10">
+                    <input class="form-control" id="senha" type="password" placeholder="Senha (Obrigatório)" formControlName="senha"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="confirm-senha" >Confirme a senha</label>
+                <div class="col-md-10">
+                    <input class="form-control" id="confirm-senha" type="password" placeholder="Confirme a Senha (Obrigatório)" formControlName="confirmSenha"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-4 col-md-offset-2">
+                    <span>
+                        <button class="btn btn-success" id="Registrar" type="submit">
+                            Registrar
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
