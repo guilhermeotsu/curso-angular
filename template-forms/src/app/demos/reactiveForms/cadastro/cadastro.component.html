@@ -9,7 +9,23 @@
             <div class="form-group">
                 <label class="col-md-2 control-label"for="nome" >Nome Completo</label>
                 <div class="col-md-10">
-                    <input class="form-control"id="nome" type="text" placeholder="Nome (Obrigatório)" formControlName="nome"/>
+                    <!-- ngClass adiciona uma classe dependendo de uma condição -->
+                    <input class="form-control" 
+                        id="nome" 
+                        type="text" 
+                        placeholder="Nome (Obrigatório)" 
+                        formControlName="nome" 
+                        [ngClass]="{
+                            'is-invalid': cadastroForm.get('nome').errors && (cadastroForm.get('nome').dirty || cadastroForm.get('nome').touched),
+                            'is-valid': cadastroForm.valid
+                        }"
+                    />
+                    
+                    <!-- Mostando a mensagem de erro só após o usuário ter interagido com o formulário -->
+                    <!-- Mesmo o formulário estando inválido ele submete para a função -->
+                    <span class="text-danger" *ngIf="cadastroForm.get('nome').errors && (cadastroForm.get('nome').dirty || cadastroForm.get('nome').touched)">
+                        <p>Preencha o campo</p>
+                    </span>
                 </div>
             </div>
 
@@ -44,9 +60,26 @@
             <div class="form-group">
                 <div class="col-md-4 col-md-offset-2">
                     <span>
-                        <button class="btn btn-success" id="Registrar" type="submit">
+                        <button class="btn btn-success" id="Registrar" type="submit" [disabled]="!cadastroForm.valid">
                             Registrar
                         </button>
+                    </span>
+                </div>
+            </div>
+
+            
+            <div class="form-group">
+                <div class="col-md-4 col-md-offset-2">
+                    <span>
+                        Formulário válido: 
+                        <strong>{{ cadastroForm.valid }}</strong>
+                    </span>
+
+                    <br>
+
+                    <span>
+                        Valor do formulário:
+                        {{ formResult }}
                     </span>
                 </div>
             </div>

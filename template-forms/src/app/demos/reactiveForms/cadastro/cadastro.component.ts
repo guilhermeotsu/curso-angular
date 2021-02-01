@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from './models/usuario';
 
 @Component({
@@ -12,6 +12,7 @@ export class CadastroComponent implements OnInit {
   // É necessário adicionar o atributo [formControl]="nomeFormGroup" na tag de form
   cadastroForm: FormGroup;
   usuario: Usuario;
+  formResult: string = '';
 
   constructor(private fb: FormBuilder) { }
 
@@ -22,7 +23,7 @@ export class CadastroComponent implements OnInit {
     // cada input do formulario é um FormControl
     //let nome = new FormControl('');
     this.cadastroForm = this.fb.group({
-      nome: [''],
+      nome: ['', Validators.required],
       cpf: [''],
       email: [''],
       senha: [''],
@@ -34,7 +35,6 @@ export class CadastroComponent implements OnInit {
     // Pegando os valores do cadastro, vem em um objeto
     //let x = this.cadastroForm.value -> dados nao tipados
     this.usuario = Object.assign({}, this.usuario, this.cadastroForm.value) // -> tipando os dados do formulario
-
-    console.log(this.usuario)
+    this.formResult = JSON.stringify(this.cadastroForm.value)
   }
 }
