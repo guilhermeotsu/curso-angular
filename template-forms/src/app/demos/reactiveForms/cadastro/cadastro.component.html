@@ -39,7 +39,22 @@
             <div class="form-group">
                 <label class="col-md-2 control-label" for="email" >E-mail</label>
                 <div class="col-md-10">
-                    <input class="form-control" id="email" type="email" placeholder="Email (Obrigatório)" formControlName="email"/>
+                    <input class="form-control" 
+                        id="email" 
+                        type="email" 
+                        placeholder="Email (Obrigatório)" 
+                        formControlName="email"
+                        [ngClass]="{
+                            'is-invalid': !cadastroForm.valid && (cadastroForm.get('email').touched || cadastroForm.get('email').dirty),
+                            'is-valid': cadastroForm.valid
+                        }"
+                        />
+                    <span class="text-danger" *ngIf="cadastroForm.get('email')?.errors?.required && (cadastroForm.get('email').dirty || cadastroForm.get('email').touched)">
+                        <p>Preencha o e-mail</p>
+                    </span>
+                    <span class="text-danger" *ngIf="cadastroForm.get('email')?.errors?.email && (cadastroForm.get('email').dirty || cadastroForm.get('email').touched)">
+                        <p>Formato do e-mail inválido</p>
+                    </span>
                 </div>
             </div>
 
