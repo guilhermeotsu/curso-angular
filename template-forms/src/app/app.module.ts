@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule } from   '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
-import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgBrazil } from 'ng-brazil';
+import { TextMaskModule } from 'angular2-text-mask';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './navegacao/menu/menu.component';
@@ -17,7 +19,7 @@ import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.compo
     AppComponent,
     MenuComponent,
     HomeComponent,
-    FooterComponent,
+    FooterComponent,  
     SobreComponent,
     CadastroComponent
   ],
@@ -25,6 +27,8 @@ import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.compo
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    NgBrazil, // Validações de campos, // Campos
+    TextMaskModule,
     [RouterModule.forRoot(rootRouterConfig, { useHash: false})]
   ],
   providers: [

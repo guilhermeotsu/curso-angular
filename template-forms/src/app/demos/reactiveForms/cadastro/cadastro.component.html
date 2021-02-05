@@ -32,7 +32,20 @@
             <div class="form-group">
                 <label class="col-md-2 control-label" for="cpf" >CPF</label>
                 <div class="col-md-10">
-                    <input class="form-control" id="cpf" type="text" placeholder="CPF (Obrigatório)" formControlName="cpf" />
+                    <input 
+                        class="form-control" 
+                        id="cpf" 
+                        type="text" 
+                        placeholder="CPF (Obrigatório)" 
+                        formControlName="cpf" 
+                        cpf [textMask]="{mask: MASKS.cpf.textMask}" 
+                    />
+                    <span class="text-danger" *ngIf="cadastroForm.get('cpf')?.errors?.required && (cadastroForm.get('cpf').dirty || cadastroForm.get('cpf').touched)">
+                        <p>Campo CPF Obrigatório</p>
+                    </span>
+                    <span class="text-danger" *ngIf="cadastroForm.get('cpf')?.errors?.cpf">
+                        <p>CPF Inválido</p>
+                    </span>
                 </div>
             </div>
 
