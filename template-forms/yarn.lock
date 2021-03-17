@@ -1172,6 +1172,13 @@
   "resolved" "https://registry.npmjs.org/amdefine/-/amdefine-1.0.1.tgz"
   "version" "1.0.1"
 
+"angular2-text-mask@^9.0.0":
+  "integrity" "sha512-iALcnhJPS1zvX48d86rgUgDe/crX6XfhZrXC4Gdlo2/YwZW7u7KJZY6/b3ieSCIWVq/E6p+wDCzeo3E6leRjDA=="
+  "resolved" "https://registry.npmjs.org/angular2-text-mask/-/angular2-text-mask-9.0.0.tgz"
+  "version" "9.0.0"
+  dependencies:
+    "text-mask-core" "^5.0.0"
+
 "ansi-align@^3.0.0":
   "integrity" "sha512-ZpClVKqXN3RGBmKibdfWzqCY4lnjEuoNzU5T0oEFpfd/z5qJHVarukridD4juLO2FXMiwUQxr9WqQtaYa8XRYw=="
   "resolved" "https://registry.npmjs.org/ansi-align/-/ansi-align-3.0.0.tgz"
@@ -1447,7 +1454,7 @@
   dependencies:
     "object.assign" "^4.1.0"
 
-"babel-runtime@^6.22.0", "babel-runtime@^6.26.0":
+"babel-runtime@^6.22.0", "babel-runtime@^6.26.0", "babel-runtime@^6.6.1":
   "integrity" "sha1-llxwWGaOgrVde/4E/yM3vItWR/4="
   "resolved" "https://registry.npmjs.org/babel-runtime/-/babel-runtime-6.26.0.tgz"
   "version" "6.26.0"
@@ -1553,7 +1560,7 @@
   "resolved" "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.0.0.tgz"
   "version" "2.0.0"
 
-"bluebird@^3.5.1", "bluebird@^3.5.3", "bluebird@^3.5.5":
+"bluebird@^3.4.6", "bluebird@^3.5.1", "bluebird@^3.5.3", "bluebird@^3.5.5":
   "integrity" "sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg=="
   "resolved" "https://registry.npmjs.org/bluebird/-/bluebird-3.7.2.tgz"
   "version" "3.7.2"
@@ -4434,6 +4441,16 @@
     "promise" "^7.1.1"
     "source-map" "~0.6.0"
 
+"libphonenumber-js@^0.4.5":
+  "integrity" "sha512-Ns5FcEp8W/lZd+lKu7OB46RYBKcncN/S3C51OFh7qXbu6kOFAd75A4M0jtasK3MUWMxKsKXII4WL+GbqaLa2DQ=="
+  "resolved" "https://registry.npmjs.org/libphonenumber-js/-/libphonenumber-js-0.4.52.tgz"
+  "version" "0.4.52"
+  dependencies:
+    "babel-runtime" "^6.6.1"
+    "bluebird" "^3.4.6"
+    "minimist" "^1.2.0"
+    "xml2js" "^0.4.17"
+
 "license-webpack-plugin@2.1.2":
   "integrity" "sha512-7poZHRla+ae0eEButlwMrPpkXyhNVBf2EHePYWT0jyLnI6311/OXJkTI2sOIRungRpQgU2oDMpro5bSFPT5F0A=="
   "resolved" "https://registry.npmjs.org/license-webpack-plugin/-/license-webpack-plugin-2.1.2.tgz"
@@ -4916,6 +4933,13 @@
   dependencies:
     "js-brasil" "*"
     "tslib" "^2.0.0"
+
+"ng2-validation@^4.2.0":
+  "integrity" "sha1-841EHT+36GIVUWZIAEWq/5rRHbs="
+  "resolved" "https://registry.npmjs.org/ng2-validation/-/ng2-validation-4.2.0.tgz"
+  "version" "4.2.0"
+  dependencies:
+    "libphonenumber-js" "^0.4.5"
 
 "nice-try@^1.0.4":
   "integrity" "sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ=="
@@ -6278,6 +6302,11 @@
   "resolved" "https://registry.npmjs.org/sax/-/sax-1.2.4.tgz"
   "version" "1.2.4"
 
+"sax@>=0.6.0":
+  "integrity" "sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw=="
+  "resolved" "https://registry.npmjs.org/sax/-/sax-1.2.4.tgz"
+  "version" "1.2.4"
+
 "sax@0.5.x":
   "integrity" "sha1-1HLbIo6zMcJQaw6MFVJK25OdEsE="
   "resolved" "https://registry.npmjs.org/sax/-/sax-0.5.8.tgz"
@@ -7047,6 +7076,11 @@
   "resolved" "https://registry.npmjs.org/text-mask-addons/-/text-mask-addons-3.8.0.tgz"
   "version" "3.8.0"
 
+"text-mask-core@^5.0.0":
+  "integrity" "sha1-gN1evgSCV1fkZhnmkUB6n4s8G28="
+  "resolved" "https://registry.npmjs.org/text-mask-core/-/text-mask-core-5.1.2.tgz"
+  "version" "5.1.2"
+
 "through@^2.3.6", "through@>=2.2.7 <3":
   "integrity" "sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU="
   "resolved" "https://registry.npmjs.org/through/-/through-2.3.8.tgz"
@@ -7694,6 +7728,19 @@
   "integrity" "sha1-SWsswQnsqNus/i3HK2A8F8WHCtQ="
   "resolved" "https://registry.npmjs.org/xdg-basedir/-/xdg-basedir-3.0.0.tgz"
   "version" "3.0.0"
+
+"xml2js@^0.4.17":
+  "integrity" "sha512-ySPiMjM0+pLDftHgXY4By0uswI3SPKLDw/i3UXbnO8M/p28zqexCUoPmQFrYD+/1BzhGJSs2i1ERWKJAtiLrug=="
+  "resolved" "https://registry.npmjs.org/xml2js/-/xml2js-0.4.23.tgz"
+  "version" "0.4.23"
+  dependencies:
+    "sax" ">=0.6.0"
+    "xmlbuilder" "~11.0.0"
+
+"xmlbuilder@~11.0.0":
+  "integrity" "sha512-fDlsI/kFEx7gLvbecc0/ohLG50fugQp8ryHzMTuW9vSa1GJ0XYWKnhsUx7oie3G98+r56aTQIUB4kht42R3JvA=="
+  "resolved" "https://registry.npmjs.org/xmlbuilder/-/xmlbuilder-11.0.1.tgz"
+  "version" "11.0.1"
 
 "xtend@^4.0.0", "xtend@~4.0.1":
   "integrity" "sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ=="
