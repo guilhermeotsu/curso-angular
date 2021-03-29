@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { ProdutosDashboardComponent } from "./produtos-dashboard/produtos-dashboard.component";
+import { ProdutosDashboardComponent } from "../produtos/produtos-dashboard/produtos-dashboard.component";
 
 
 export const produtosRoutingConfig: Routes = [

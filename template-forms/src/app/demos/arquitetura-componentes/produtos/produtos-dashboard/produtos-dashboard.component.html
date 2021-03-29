@@ -1,0 +1,19 @@
+<div class="container main-container">
+    <h1>
+        Lista Produtos
+    </h1>
+
+    <produto-counter [produtos]="produtos"></produto-counter>
+
+    <div class="row text-center">
+
+        <!-- Passando o produto para o Input do componente filho produto-card-detalhe com o [produto]="produto"  com o objeto iterado-->
+        <produto-card-detalhe 
+            class="col-md-4" 
+            *ngFor="let produto of produtos" 
+            [produto]="produto"
+            (status)="mudarStatus($event)"
+        >
+        </produto-card-detalhe>
+    </div>
+</div>  
