@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { fromEvent, Observable } from 'rxjs';
 import { Produto } from '../../models/produtos';
 
 @Component({
@@ -6,9 +7,11 @@ import { Produto } from '../../models/produtos';
     templateUrl: './produtos-dashboard.component.html',
     styles: []
 })
-export class ProdutosDashboardComponent implements OnInit {
+export class ProdutosDashboardComponent implements OnInit, AfterViewInit {
 
     produtos: Produto[];
+
+    @ViewChild('teste', { static: false}) mensagemTela: ElementRef
 
     constructor() { }
 
@@ -36,6 +39,14 @@ export class ProdutosDashboardComponent implements OnInit {
                 valor: 100
             }
         ]
+    }
+    ngAfterViewInit(): void {
+        let clickTexto: Observable<any> = fromEvent(this.mensagemTela.nativeElement, 'click');
+
+        clickTexto.subscribe(() => {
+            alert('texto clicado')
+            return;
+        })
     }
 
     mudarStatus(event: Produto) {
