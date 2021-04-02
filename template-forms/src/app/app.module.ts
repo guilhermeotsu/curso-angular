@@ -30,7 +30,6 @@ import { AppRoutingModule } from './app.routes';
     AppRoutingModule
   ],
   providers: [ // Providers sao os servicos injetados por dependencia
-    {provide: APP_BASE_HREF, useValue: '/'}
   ],
   bootstrap: [AppComponent]
 })

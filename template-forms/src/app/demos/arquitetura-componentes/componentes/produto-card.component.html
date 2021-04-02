@@ -28,6 +28,10 @@
             <a class="btn btn-success" (click)="mudarStatus()" href="javascript:void(0)">
                 Botão
             </a>
+
+            <a class="btn" [routerLink]="['editar/', produto.id]" >
+                Editar
+            </a>
         </div>
     </div>
 </div>
