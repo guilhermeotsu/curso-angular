@@ -41,11 +41,23 @@ export class ProdutoService {
                 ativo: true,
                 valor: 600,
                 imagem: 'teclado.jpg'
+            },
+            {
+                id: 6,
+                nome:'Teste 6',
+                ativo: false,
+                valor: 600,
+                imagem: 'teclado.jpg'
             }
         ]
     }
 
-    obterTodos(): Produto[] {
+    obterTodos(estado: string): Produto[] {
+
+        if(estado === 'ativos') {
+            return this.produtos.filter(p => p.ativo);
+        }
+
         return this.produtos;
     }
 

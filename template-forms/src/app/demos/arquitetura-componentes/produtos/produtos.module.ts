@@ -12,6 +12,7 @@ import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { ProdutoEditarComponent } from './produto-editar/produto-editar.component';
 import { ProdutoService } from "../services/produto.service";
+import { ProdutoResolve } from "../services/produto.resolve";
 registerLocaleData(localePt);
 
 @NgModule({
@@ -27,7 +28,8 @@ registerLocaleData(localePt);
         ProdutosRoutingModule
     ],
     providers: [  
-        ProdutoService
+        ProdutoService,
+        ProdutoResolve
     ],
     exports: [
 

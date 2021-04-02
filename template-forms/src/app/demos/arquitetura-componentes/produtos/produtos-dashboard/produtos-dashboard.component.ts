@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { fromEvent, Observable } from 'rxjs';
 import { Produto } from '../../models/produtos';
 
@@ -13,33 +14,12 @@ export class ProdutosDashboardComponent implements OnInit, AfterViewInit {
 
     @ViewChild('teste', { static: false}) mensagemTela: ElementRef
 
-    constructor() { }
+    constructor(private route: ActivatedRoute) { }
 
     ngOnInit() {
-        this.produtos = [
-            {
-                id: 1,
-                nome: 'Teste 1',
-                ativo: true,
-                imagem: 'celular.jpg',
-                valor: 100
-            },
-            {
-                id: 2,
-                nome: 'Teste 2',
-                ativo: true,
-                imagem: 'gopro.jpg',
-                valor: 100
-            },
-            {
-                id: 3,
-                nome: 'Teste 3',
-                ativo: false,
-                imagem: 'mouse.jpg',
-                valor: 100
-            }
-        ]
+        this.produtos = this.route.snapshot.data["produtos"]
     }
+
     ngAfterViewInit(): void {
         let clickTexto: Observable<any> = fromEvent(this.mensagemTela.nativeElement, 'click');
 

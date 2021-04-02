@@ -28,7 +28,6 @@ export class ProdutoEditarComponent implements OnInit {
   }
 
   salvar() {
-    console.log('salvar')
     // Redirecionando para um url em especifico
     setTimeout(() => {
       this.router.navigate(['/produtos']);
