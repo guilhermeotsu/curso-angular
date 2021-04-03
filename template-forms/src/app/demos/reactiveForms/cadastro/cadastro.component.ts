@@ -23,6 +23,8 @@ export class CadastroComponent implements OnInit, AfterViewInit {
   formResult: string = '';
   MASKS = MASKS;
 
+  cadastroSujo: boolean;
+
   // Validacao com a classe GenericValidation
   validationMessages: ValidationMessages;
   displayMessages: DisplayMessage = {};
@@ -84,6 +86,8 @@ export class CadastroComponent implements OnInit, AfterViewInit {
 
     merge(...controlBlurs).subscribe(() => {
       this.displayMessages = this.genericValidation.processarMensagens(this.cadastroForm)
+
+      this.cadastroSujo = true;
     })
   }
 
@@ -92,5 +96,7 @@ export class CadastroComponent implements OnInit, AfterViewInit {
     //let x = this.cadastroForm.value -> dados nao tipados
     this.usuario = Object.assign({}, this.usuario, this.cadastroForm.value) // -> tipando os dados do formulario
     this.formResult = JSON.stringify(this.cadastroForm.value)
+
+    this.cadastroSujo = false;
   }
 }

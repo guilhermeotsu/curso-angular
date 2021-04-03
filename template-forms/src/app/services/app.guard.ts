@@ -13,5 +13,5 @@ export class AuthGuard implements CanLoad, CanActivate {
 
     canActivate() : boolean {
         return this.user.logged;
-    }    
+    }  
 }

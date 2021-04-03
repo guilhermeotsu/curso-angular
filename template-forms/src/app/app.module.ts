@@ -14,6 +14,7 @@ import { NavegacaoModule } from './navegacao/navegacao.module';
 import { AppRoutingModule } from './app.routes';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { AuthGuard } from './services/app.guard';
+import { CadastroGuard } from './services/cadastro.guard';
 
 @NgModule({
   declarations: [ // declaracao dos componentes do modulo
@@ -32,7 +33,8 @@ import { AuthGuard } from './services/app.guard';
     AppRoutingModule
   ],
   providers: [ // Providers sao os servicos injetados por dependencia
-    AuthGuard
+    AuthGuard,
+    CadastroGuard
   ],
   bootstrap: [AppComponent]
 })
