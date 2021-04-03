@@ -12,6 +12,8 @@ import { SobreComponent } from './institucional/sobre/sobre.component';
 import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.component';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 import { AppRoutingModule } from './app.routes';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { AuthGuard } from './services/app.guard';
 
 @NgModule({
   declarations: [ // declaracao dos componentes do modulo
@@ -30,6 +32,7 @@ import { AppRoutingModule } from './app.routes';
     AppRoutingModule
   ],
   providers: [ // Providers sao os servicos injetados por dependencia
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
