@@ -7,12 +7,14 @@ import { ProdutoAppComponent } from "../produtos/produto.app.component";
 
 import { ProdutosRoutingModule } from "../produtos/produtos.router";
 
-// Formataçao de moedas para real
-import { registerLocaleData } from '@angular/common';
-import localePt from '@angular/common/locales/pt';
 import { ProdutoEditarComponent } from './produto-editar/produto-editar.component';
 import { ProdutoService } from "../services/produto.service";
 import { ProdutoResolve } from "../services/produto.resolve";
+
+
+// Formataçao de moedas para real
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
 registerLocaleData(localePt);
 
 @NgModule({

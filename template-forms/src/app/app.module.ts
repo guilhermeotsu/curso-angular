@@ -12,15 +12,22 @@ import { SobreComponent } from './institucional/sobre/sobre.component';
 import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.component';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 import { AppRoutingModule } from './app.routes';
-import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { AuthGuard } from './services/app.guard';
 import { CadastroGuard } from './services/cadastro.guard';
+import { FilmesComponent } from './demos/arquitetura-componentes/pipes/filmes/filmes.component';
+
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+import { FileSizePipe } from './demos/arquitetura-componentes/pipes/filmes/filesize.pipe';
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [ // declaracao dos componentes do modulo
     AppComponent,  
     SobreComponent,
-    CadastroComponent
+    CadastroComponent,
+    FilmesComponent,
+    FileSizePipe
   ],
   imports: [
     BrowserModule,
