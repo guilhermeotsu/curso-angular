@@ -19,6 +19,9 @@ import { FilmesComponent } from './demos/arquitetura-componentes/pipes/filmes/fi
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { FileSizePipe } from './demos/arquitetura-componentes/pipes/filmes/filesize.pipe';
+import { BarComponent } from './demos/bar-di-zones/bar/bar.component';
+import { BarModule } from './demos/bar-di-zones/bar/bar.module';
+import { BarSerivce } from './demos/bar-di-zones/bar/bar.service';
 registerLocaleData(localePt);
 
 @NgModule({
@@ -37,11 +40,13 @@ registerLocaleData(localePt);
     TextMaskModule,
     CustomFormsModule,
     NavegacaoModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BarModule
   ],
   providers: [ // Providers sao os servicos injetados por dependencia
     AuthGuard,
-    CadastroGuard
+    CadastroGuard//,
+    //BarSerivce
   ],
   bootstrap: [AppComponent]
 })
