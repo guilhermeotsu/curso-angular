@@ -16,3 +16,7 @@ export class BarSerivce {
         return 'Refeicoes';
     }
 }
+
+export abstract class BebidaService {
+    obterBebidas: () => string;
+}
