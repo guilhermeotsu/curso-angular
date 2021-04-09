@@ -8,6 +8,7 @@ import { AuthGuard } from './services/app.guard';
 import { CadastroGuard } from './services/cadastro.guard';
 import { FilmesComponent } from './demos/arquitetura-componentes/pipes/filmes/filmes.component';
 import { BarComponent } from './demos/bar-di-zones/bar/bar.component';
+import { TodoComponent } from './demos/todo/todo.component';
 
 export const rootRouterConfig: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -17,6 +18,7 @@ export const rootRouterConfig: Routes = [
     { path: 'filmes', component: FilmesComponent },
     { path: 'produtos', loadChildren: () => import('./demos/arquitetura-componentes/produtos/produtos.module').then(p => p.ProdutosModule) }, // Fazendo lazy loading
     { path: 'admin', loadChildren: () => import('./admin/admin.module').then(p => p.AdminModule), canLoad: [AuthGuard], canActivate: [AuthGuard] }, // canLoad tem como funcao verificar se deve carregar o modulo para o usuario, canActivate permite que vc baixe o modulo mas verifica se voce pode acessar
+    { path: 'todo', component: TodoComponent },
     { path: 'bar', component: BarComponent },
 
     { path: '**', component: NotFoundComponent }

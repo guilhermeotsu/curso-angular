@@ -22,6 +22,8 @@ import { FileSizePipe } from './demos/arquitetura-componentes/pipes/filmes/files
 import { BarComponent } from './demos/bar-di-zones/bar/bar.component';
 import { BarModule } from './demos/bar-di-zones/bar/bar.module';
 import { BarSerivce } from './demos/bar-di-zones/bar/bar.service';
+import { TodoComponent } from './demos/todo/todo.component';
+import { TodoModule } from './demos/todo/todo.module';
 registerLocaleData(localePt);
 
 @NgModule({
@@ -41,7 +43,8 @@ registerLocaleData(localePt);
     CustomFormsModule,
     NavegacaoModule,
     AppRoutingModule,
-    BarModule
+    BarModule,
+    TodoModule  
   ],
   providers: [ // Providers sao os servicos injetados por dependencia
     AuthGuard,
