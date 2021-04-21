@@ -35,6 +35,12 @@
             "nome": "Dashboard financeiro",
             "finalizado": false ,
             "iniciado": true
+        },
+        {
+            "id": 7,
+            "nome": "Dashboard compras",
+            "finalizado": true,
+            "iniciado":false
         }
     ]
 }
