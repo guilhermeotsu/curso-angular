@@ -1,5 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Task } from '../../task';
+import { TaskService } from '../../todo.service';
+import { TasksFinalizadasComponent } from '../tasks-finalizadas/tasks-finalizadas.component';
 
 @Component({
   selector: 'todo-list',
@@ -8,7 +10,7 @@ import { Task } from '../../task';
 })
 export class TodoListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit() {
   }
@@ -45,5 +47,9 @@ export class TodoListComponent implements OnInit {
     this.toggle.emit({
       task: { ...task }
     })
+  }
+
+  deleteItem(idItem: number) {
+    this.taskService.delete(idItem);
   }
 }

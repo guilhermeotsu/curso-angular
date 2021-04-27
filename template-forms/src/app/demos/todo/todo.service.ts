@@ -8,8 +8,9 @@ import { Store } from "./todo.store";
 @Injectable()
 
 export class TaskService { 
+    basePath = "http://localhost:3000/todolist"
     
-    todos$: Observable<Task[]> = this.http.get<Task[]>("http://localhost:3000/todolist")
+    todos$: Observable<Task[]> = this.http.get<Task[]>(this.basePath)
                 .pipe(tap(next => this.store.set('todolist', next))); // Pupulando a store com o serviço 
 
     // Para usar via Injecao de dependecia é necessario registrar no modulo
@@ -17,14 +18,14 @@ export class TaskService {
 
     // Jeito "tradicional" de fazer
     getTodos() : Observable<Task[]> {
-        return this.http.get<Task[]>("http://localhost:3000/todolist")
+        return this.http.get<Task[]>(this.basePath)
     }
     
     // Adicionando dentro do servico pois ira alterar no backend
     // E a store apenas le daqui
     toggle(event: any) {
         this.http
-        .put(`http://localhost:3000/todolist/${event.task.id}`, event.task) // Esse event foi criado dentro de todo-list.component com o método emit de um EventEmitter
+        .put(this.basePath + `/${event.task.id}`, event.task) // Esse event foi criado dentro de todo-list.component com o método emit de um EventEmitter
         .subscribe(() => {
             // Atualizando os dados da store
             const value = this.store.value.todolist;
@@ -37,5 +38,27 @@ export class TaskService {
 
             this.store.set('todolist', todoList);
         });
-    }   
+    }
+    
+    createTask(task: Task) {
+        this.http
+            .post(this.basePath, task)
+            .subscribe((data) => {
+                this.store.value.todolist.push(data as Task);
+
+                const taskList = this.store.value.todolist;
+
+                this.store.set('todolist', taskList);
+            });
+    }
+
+    delete(id: number) {
+        this.http
+            .delete(this.basePath + `/${id}`)
+            .subscribe((data) => {
+                const tasks = this.store.value.todolist.filter((task) => task.id !== id)
+
+                this.store.set('todolist', tasks);
+            })
+    }
 }

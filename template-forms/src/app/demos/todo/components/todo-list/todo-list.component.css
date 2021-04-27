@@ -42,6 +42,16 @@
     background-size: 20px 20px;
 }
 
+.task-list__excluir {
+    width: 22px;
+    height: 20px;
+    position: absolute;
+    right: 50px;
+    cursor: pointer;
+    background: url(/assets/excluir.jpg) no-repeat 0 0;
+    background-size: 20px 20px;
+}
+
 .task-list li {
     list-style-type: none !important;
     position: relative;

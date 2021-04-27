@@ -1,0 +1,7 @@
+<div class="input-group mb-3">
+  <input type="text" #nameTask class="form-control" placeholder="Digite o nome da tarefa" aria-label="Recipient's username" aria-describedby="basic-addon2" value="">
+
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button" (click)="createTask(nameTask.value)">Criar</button>
+  </div>
+</div>
