@@ -1,5 +1,5 @@
 <div class="tasks">
-    <todo-list [list]="todos$ | async">
+    <todo-list [list]="todos$ | async" (toggle)="onToggle($event)">
         Tarefas <!-- Populano ng-content do componente -->
     </todo-list>
 </div>

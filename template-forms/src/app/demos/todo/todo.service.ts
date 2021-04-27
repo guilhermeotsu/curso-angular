@@ -19,4 +19,23 @@ export class TaskService {
     getTodos() : Observable<Task[]> {
         return this.http.get<Task[]>("http://localhost:3000/todolist")
     }
+    
+    // Adicionando dentro do servico pois ira alterar no backend
+    // E a store apenas le daqui
+    toggle(event: any) {
+        this.http
+        .put(`http://localhost:3000/todolist/${event.task.id}`, event.task) // Esse event foi criado dentro de todo-list.component com o método emit de um EventEmitter
+        .subscribe(() => {
+            // Atualizando os dados da store
+            const value = this.store.value.todolist;
+            
+            const todoList = value.map((task: Task) => {
+                return event.task.id === task.id ?
+                    { ...task, ...event.task } :
+                    task
+            })
+
+            this.store.set('todolist', todoList);
+        });
+    }   
 }

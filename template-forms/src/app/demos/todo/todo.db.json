@@ -1,46 +1,52 @@
 {
-    "todolist": [
-        {
-            "id": 1,
-            "nome": "Responder emails",
-            "finalizado": true,
-            "iniciado": true
-        },
-        {
-            "id": 2,
-            "nome": "Falar com o Carlos",
-            "finalizado": false,
-            "iniciado": false
-        },
-        {
-            "id": 3,
-            "nome": "Corrigir bug Produtos",
-            "finalizado": false,
-            "iniciado": false
-        },
-        {
-            "id": 4,
-            "nome": "CRUD Fornecedores",
-            "finalizado": false,
-            "iniciado": true
-        },
-        {
-            "id": 5,
-            "nome": "Relatório de vendas",
-            "finalizado": true,
-            "iniciado": true
-        },
-        {
-            "id": 6,
-            "nome": "Dashboard financeiro",
-            "finalizado": false ,
-            "iniciado": true
-        },
-        {
-            "id": 7,
-            "nome": "Dashboard compras",
-            "finalizado": true,
-            "iniciado":false
-        }
-    ]
+  "todolist": [
+    {
+      "id": 1,
+      "nome": "Responder e-mails",
+      "finalizado": true,
+      "iniciado": false
+    },
+    {
+      "id": 2,
+      "nome": "Reunião com fornecedor",
+      "finalizado": true,
+      "iniciado": false
+    },
+    {
+      "id": 3,
+      "nome": "Finalizar curso de Angular",
+      "finalizado": false,
+      "iniciado": true
+    },
+    {
+      "id": 4,
+      "nome": "Publicar feedback no LinkedIn",
+      "finalizado": false,
+      "iniciado": true
+    },
+    {
+      "id": 5,
+      "nome": "Levar cachorro no veterinário",
+      "finalizado": false,
+      "iniciado": true
+    },
+    {
+      "id": 6,
+      "nome": "Ligar para Mãe",
+      "finalizado": false,
+      "iniciado": true
+    },
+    {
+      "id": 7,
+      "nome": "Comprar Café",
+      "finalizado": true,
+      "iniciado": false
+    },
+    {
+      "id": 8,
+      "nome": "Visitar desenvolvedor.io",
+      "finalizado": true,
+      "iniciado": false
+    }
+  ]
 }

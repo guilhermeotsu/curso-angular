@@ -5,10 +5,15 @@
 
     <table class="table table-striped">
         <tbody>
-            <tr *ngFor="let item of list">
+            <tr *ngFor="let item of list; index as i"> <!-- Pegando o índice do array-->
                 <td>
                     <span>
                         {{ item.nome  }}
+
+                        <span *ngIf="!item.finalizado && item.iniciado" (click)="toggleItem(i, 'finalizar')" class="task-list__finalizado"></span> 
+                        <span *ngIf="!item.finalizado && !item.iniciado" (click)="toggleItem(i, 'iniciar')"  class="task-list__iniciado"></span>
+                        <span *ngIf="item.finalizado && !item.iniciado" (click)="toggleItem(i, 'retomar')"  class="task-list__retroceder"></span>
+                        <span *ngIf="!item.finalizado && item.iniciado" (click)="toggleItem(i, 'cancelar')"  class="task-list__retroceder"></span>
                     </span>
                 </td>
             </tr>

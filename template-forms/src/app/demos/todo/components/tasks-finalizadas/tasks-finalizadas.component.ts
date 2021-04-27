@@ -18,4 +18,10 @@ export class TasksFinalizadasComponent implements OnInit {
   ngOnInit() {
     this.todos$ = this.store.getTodoList().pipe(map(store => store.filter(task => task.finalizado)));
   }
+
+  // Pegando a emissao do evento criada dentro de todo-list.component
+  onToggle(event: any) {
+    // Recebendo a mudança de estado já com o estado alterado da tarefa
+    this.taskService.toggle(event);
+  }
 }
