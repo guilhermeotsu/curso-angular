@@ -17,20 +17,34 @@ export class ProdutosDashboardComponent implements OnInit, AfterViewInit {
     constructor(private route: ActivatedRoute) { }
 
     ngOnInit() {
+        console.log('teste')
         this.produtos = this.route.snapshot.data["produtos"]
     }
 
     ngAfterViewInit(): void {
         let clickTexto: Observable<any> = fromEvent(this.mensagemTela.nativeElement, 'click');
 
+        this.teste('teste teste',   0)
+        this.teste('teste teste',      0)
+        this.teste('teste teste',          0)
+        this.teste('teste teste',                  0)
+        this.teste('teste teste',                      0)
+        this.teste('teste teste',                                  0)
+
         clickTexto.subscribe(() => {
+            console.log('teste')
             alert('texto clicado')
             return;
         })
     }
 
+    teste(event: any, index: any) {
+        console.log(event, index)
+    }
+
     mudarStatus(event: Produto) {
         console.log('batendo aqui')
+        console.log('')
         event.ativo = !event.ativo;
     }
 }

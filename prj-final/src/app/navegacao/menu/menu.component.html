@@ -1,0 +1,32 @@
+<header>
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom">
+    <div class="container">
+      <a class="navbar-toggler" href="/">Meus produtos</a>
+      <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" data-toggle="collapse" data-target=".navbar">
+        <span class="navbar-toggle-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" [ngbCollapse]="isCollapsed">
+        <ul class="nav">
+          <li class="nav-item" style="padding-right:30px">
+            <a class="btn btn-primary" href="#">Entrar</a>
+          </li>
+          <li class="nav-item" style="padding-right:30px">
+            <a class="btn btn-primary" routerLink="/criar-conta" >Criar Conta</a>
+          </li>
+        </ul>
+
+        <ul class="nav justify-content-end nav-pills">
+          <li class="nav-item" style="padding-right:30px">
+            <a class="nav-link text-dark" href="/">Home</a>
+          </li>
+          <li class="nav-item" style="padding-right:30px">
+            <a class="nav-link text-dark" href="/">Fornecedores</a>
+          </li>
+          <li class="nav-item" style="padding-right:30px">
+            <a class="nav-link text-dark" href="/">Produtos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
