@@ -1,10 +1,17 @@
 import { NgModule } from "@angular/core";
+import { CriarContaComponent } from "./criar/criar-conta.component";
+import { LoginComponent } from "./login/login.component";
 
 @NgModule({
-  exports:[],
+  exports:[
+    LoginComponent,
+    CriarContaComponent
+  ],
+  declarations: [
+    LoginComponent,
+    CriarContaComponent
+  ],
   imports:[],
-  declarations: []
 })
-
 
 export class ContasModule {  }
